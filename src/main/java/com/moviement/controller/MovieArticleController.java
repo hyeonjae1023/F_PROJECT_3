@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.moviement.container.Container;
+import com.moviement.dto.Member;
 import com.moviement.dto.MovieArticle;
 import com.moviement.dto.Seat;
 import com.moviement.service.MemberService;
@@ -96,7 +97,8 @@ public class MovieArticleController extends Controller {
 			System.out.println("로그인 후 이용해주세요.\n");
 			return;
 		}
-
+		Member loginedMember = Container.getSession().getLoginedMember();
+		setGrade();
 		List<MovieArticle> forPrintGetMovieArticles = movieArticleService.getMovieArticles();
 
 		while (true) {
@@ -255,8 +257,11 @@ public class MovieArticleController extends Controller {
 						}
 						System.out.println("|");
 					}
-
-					System.out.printf("\n선택하신 좌석은 %s입니다.\n\n", Arrays.toString(seatStrArr));
+					String grade = loginedMember.grade;
+					float dc = loginedMember.dc;
+					float price = forPrintGetMovieArticles.get(selectNum - 1).price;
+					
+					System.out.printf("\n선택하신 좌석은 %s, 예매 가격은 %s 할인가 적용 %.2f 입니다.\n\n", Arrays.toString(seatStrArr),grade,(price - price*dc)*persons);
 					System.out.println("1. 예매하기");
 					System.out.println("9. 이전 단계로\n");
 					System.out.print("입력 : ");

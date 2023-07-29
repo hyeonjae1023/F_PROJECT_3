@@ -61,7 +61,7 @@ public class MemberController extends Controller {
 			break;
 		}
 	}
-
+	
 	private boolean isJoinableLoginId(String loginId) {
 		Member member = memberService.getMemberByLoginId(loginId);
 
@@ -153,7 +153,10 @@ public class MemberController extends Controller {
 		System.out.printf("이름 : ");
 		String name = sc.next();
 
-		memberService.join(loginId, eMail, nickName, loginPw, name);
+		String grade = "bronze";
+		
+		float dc = 0;
+		memberService.join(loginId, eMail, nickName, loginPw, name, grade, dc);
 
 		System.out.printf("\n%s님, MovieMent 회원이 되신걸 환영합니다 :D\n\n", name);
 	}
@@ -189,7 +192,6 @@ public class MemberController extends Controller {
 
 		session.setLoginedMember(member);
 		Member loginedMember = session.getLoginedMember();
-
 		System.out.printf("어서 오세요 %s님, 환영합니다 :D\n\n", loginedMember.name);
 	}
 
@@ -201,6 +203,7 @@ public class MemberController extends Controller {
 		session.setLoginedMember(null);
 		System.out.println("로그아웃 되었습니다.\n");
 	}
+
 
 	private void showMyPage() {
 		if (Container.getSession().isLogined() == false) {
@@ -279,6 +282,8 @@ public class MemberController extends Controller {
 
 	private void showMyInfo() {
 		Member loginedMember = Container.getSession().getLoginedMember();
+		setGrade(); //회원등급 설정
+		
 		int selectNum;
 
 		System.out.printf("=== === === 내 정보 === === ===\n\n");
@@ -288,6 +293,7 @@ public class MemberController extends Controller {
 		System.out.printf("로그인 비밀번호 : %s\n", loginedMember.loginPw);
 		System.out.printf("Email : %s@gmail.com\n", loginedMember.eMail);
 		System.out.printf("닉네임 : %s\n", loginedMember.nickName);
+		System.out.printf("등급 : %s\n", loginedMember.grade);
 		System.out.println();
 		System.out.printf("9. 이전 단계로\n");
 
@@ -329,18 +335,25 @@ public class MemberController extends Controller {
 
 		while (true) {
 			System.out.println("취소를 원하는 영화의 번호를 입력해주세요.");
+			System.out.println("이전으로 : 0 ");
 			System.out.print("입력 : ");
 			selectNum = sc.nextInt();
-
+			
+			if (selectNum == 0) {
+				return;
+			}
+			
 			if (selectNum > selectMovieNum) {
 				System.out.println("\n존재하지 않는 번호입니다. 확인 후 다시 입력해주세요.\n");
 				continue;
 			}
+			
 			break;
 		}
 		System.out.println();
 
 		while (true) {
+//			System.out.printf("%s, 환불금액 : %.2f",seat.movieTitle,);
 			System.out.println("1. 예매 취소");
 			System.out.println("9. 이전 단계로");
 			System.out.print("입력 : ");

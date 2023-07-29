@@ -23,8 +23,8 @@ public class MemberService {
 		return memberDao.getMemberBynickName(nickName);
 	}
 
-	public void join(String loginId, String eMail, String nickName, String loginPw, String name) {
-		Member member = new Member(loginId, eMail, nickName, loginPw, name);
+	public void join(String loginId, String eMail, String nickName, String loginPw, String name, String grade, float dc) {
+		Member member = new Member(loginId, eMail, nickName, loginPw, name, grade, dc);
 		memberDao.join(member);
 	}
 
