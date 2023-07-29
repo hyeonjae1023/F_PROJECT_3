@@ -17,7 +17,7 @@ public class SeatDao extends Dao {
 		dbConnection = Container.getDBConnection();
 	}
 
-	public int doTicketing(String movieTitle, int[] seatId, String[] seatNums) {
+	public int doTicketing(String movieTitle, int[] seatId, String[] seatNums, float personPrice) {
 		Member loginedMember = Container.getSession().getLoginedMember();
 		
 		int id;
@@ -33,7 +33,8 @@ public class SeatDao extends Dao {
 			sb.append(String.format("seatNum = '%s', ", seatNum));
 			sb.append(String.format("movieTitle = '%s', ", movieTitle));
 			sb.append(String.format("nickName = '%s', ", loginedMember.nickName));
-			sb.append(String.format("enabledSeat = %d ", 1));
+			sb.append(String.format("enabledSeat = %d, ", 1));
+			sb.append(String.format("price = %.2f ", personPrice));
 			sb.append(String.format("WHERE id = %d; ", id));
 			dbConnection.update(sb.toString());
 		}
@@ -106,7 +107,8 @@ public class SeatDao extends Dao {
 		sb.append(String.format("seatNum = null, "));
 		sb.append(String.format("movieTitle = null, "));
 		sb.append(String.format("nickName = null, "));
-		sb.append(String.format("enabledSeat = %d ", 0));
+		sb.append(String.format("enabledSeat = %d, ", 0));
+		sb.append(String.format("price = %d ", 0));
 		sb.append(String.format("WHERE id = %d; ", id));
 		
 		dbConnection.update(sb.toString());
@@ -124,6 +126,7 @@ public class SeatDao extends Dao {
 		sb.append(String.format("movieTitle = null, "));
 		sb.append(String.format("nickName = null, "));
 		sb.append(String.format("enabledSeat = %d ", 0));
+		sb.append(String.format("price = %.1f ", 0));
 
 		return dbConnection.insert(sb.toString());
 	}

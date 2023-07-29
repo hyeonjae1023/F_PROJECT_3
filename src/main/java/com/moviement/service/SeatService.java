@@ -18,8 +18,8 @@ public class SeatService {
 		return seatDao.getForPrintSeats(nickName);
 	}
 
-	public int doTicketing(String movieTitle, int[] seatId, String[] seatNums) {
-		return seatDao.doTicketing(movieTitle, seatId, seatNums);
+	public int doTicketing(String movieTitle, int[] seatId, String[] seatNums, float personPrice) {
+		return seatDao.doTicketing(movieTitle, seatId, seatNums, personPrice);
 	}
 	
 	public Seat getSeat(int id) {

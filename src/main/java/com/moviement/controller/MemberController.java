@@ -14,6 +14,8 @@ import com.moviement.service.ReviewService;
 public class MemberController extends Controller {
 	private Scanner sc;
 	private int selectNum;
+	private float price;
+	private String movieTitle;
 	private int selectMovieNum;
 	private MemberService memberService;
 	private MovieArticleService movieArticleService;
@@ -325,11 +327,13 @@ public class MemberController extends Controller {
 		System.out.printf("=== === === 나의 예매 현황 === === ===\n\n");
 		Seat seat;
 
-		System.out.print("번호 | 좌석 | 닉네임           | 영화 이름");
+		System.out.print("번호 | 좌석 | 닉네임    | 영화 이름 | 가격");
 		for (int i = 0; i <= getForPrintSeat.size() - 1; i++) {
 			seat = getForPrintSeat.get(i);
 			selectMovieNum = seat.id;
-			System.out.printf("\n%2d | %3s | %8s | %s", seat.id, seat.seatNum, seat.nickName, seat.movieTitle);
+			price = seat.price;
+			movieTitle = seat.movieTitle;
+			System.out.printf("\n%2d  | %3s | %7s | %s | %.1f", seat.id, seat.seatNum, seat.nickName, seat.movieTitle, seat.price);
 		}
 		System.out.println("\n");
 
@@ -353,7 +357,7 @@ public class MemberController extends Controller {
 		System.out.println();
 
 		while (true) {
-//			System.out.printf("%s, 환불금액 : %.2f",seat.movieTitle,);
+			System.out.printf("%s, 환불금액 : %.1f \n",movieTitle,price);
 			System.out.println("1. 예매 취소");
 			System.out.println("9. 이전 단계로");
 			System.out.print("입력 : ");

@@ -73,7 +73,7 @@ CREATE TABLE `member` (
 	loginPw CHAR(100) NOT NULL,
 	`name` CHAR(100) NOT NULL,
 	grade CHAR(100) NOT NULL,
-	#dc float(2,2)  unsigned not null
+	dc FLOAT(2,2)  UNSIGNED NOT NULL
 );
 
 INSERT INTO `member`
@@ -84,7 +84,8 @@ loginPw = 'admin',
 Email = 'admin',
 nickName = '관리자',
 `name` = '관리자',
-grade = 'gold';
+grade = 'gold',
+dc = '0.1';
 
 INSERT INTO `member`
 SET regDate = NOW(),
@@ -94,7 +95,8 @@ loginPw = 'phj',
 Email = 'phj',
 nickName = '박현재',
 `name` = '박현재',
-grade = 'bronze';
+grade = 'bronze',
+dc = '0';
 
 INSERT INTO `member`
 SET regDate = NOW(),
@@ -104,7 +106,8 @@ loginPw = 'sdw',
 Email = 'sdw',
 nickName = '신동우',
 `name` = '신동우',
-grade = 'bronze';
+grade = 'bronze',
+dc = '0';
 
 INSERT INTO `member`
 SET regDate = NOW(),
@@ -114,7 +117,8 @@ loginPw = 'syj',
 Email = 'syj',
 nickName = '심유정',
 `name` = '심유정',
-grade = 'silver';
+grade = 'silver',
+dc = '0.05';
 
 INSERT INTO `member`
 SET regDate = NOW(),
@@ -124,7 +128,8 @@ loginPw = 'ljj',
 Email = 'ljj',
 nickName = '이재준',
 `name` = '이재준',
-grade = 'gold';
+grade = 'gold',
+dc = '0.1';
 
 SELECT * FROM `member`;
 
@@ -198,129 +203,130 @@ CREATE TABLE defaultSeats (
 	seatNum CHAR(100),
 	movieTitle CHAR(100),
 	nickName CHAR(100),
-	enabledSeat BOOL NOT NULL
+	enabledSeat BOOL NOT NULL,
+	price FLOAT(10,2)  UNSIGNED NOT NULL
 );
 
 -- 여기서부터 아래 120줄동안 INSERT문
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
-INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
+INSERT INTO defaultSeats (regDate, updateDate, seatNum, movieTitle, nickName, enabledSeat,price) VALUES (NOW(), NOW(), NULL, NULL, NULL, 0,0)
 
 SELECT * FROM defaultSeats;

@@ -99,6 +99,7 @@ public class MovieArticleController extends Controller {
 		}
 		Member loginedMember = Container.getSession().getLoginedMember();
 		setGrade();
+		setDc();
 		List<MovieArticle> forPrintGetMovieArticles = movieArticleService.getMovieArticles();
 
 		while (true) {
@@ -260,8 +261,8 @@ public class MovieArticleController extends Controller {
 					String grade = loginedMember.grade;
 					float dc = loginedMember.dc;
 					float price = forPrintGetMovieArticles.get(selectNum - 1).price;
-					
-					System.out.printf("\n선택하신 좌석은 %s, 예매 가격은 %s 할인가 적용 %.2f 입니다.\n\n", Arrays.toString(seatStrArr),grade,(price - price*dc)*persons);
+					float personPrice = price - price*dc;
+					System.out.printf("\n선택하신 좌석은 %s, 예매 가격은 %s 할인가 적용 %.2f 입니다.\n\n", Arrays.toString(seatStrArr),grade,personPrice*persons);
 					System.out.println("1. 예매하기");
 					System.out.println("9. 이전 단계로\n");
 					System.out.print("입력 : ");
@@ -270,7 +271,7 @@ public class MovieArticleController extends Controller {
 
 					switch (yesOrNo) {
 					case 1:
-						Container.seatService.doTicketing(str, seatIntArr, seatStrArr);
+						Container.seatService.doTicketing(str, seatIntArr, seatStrArr, personPrice);
 						break;
 					case 9:
 						System.out.println("초기 화면으로 돌아갑니다.\n");
