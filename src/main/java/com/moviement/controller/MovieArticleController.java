@@ -99,7 +99,7 @@ public class MovieArticleController extends Controller {
 		}
 		Member loginedMember = Container.getSession().getLoginedMember();
 		setGrade();
-		setDc();
+		
 		List<MovieArticle> forPrintGetMovieArticles = movieArticleService.getMovieArticles();
 
 		while (true) {
@@ -259,7 +259,7 @@ public class MovieArticleController extends Controller {
 						System.out.println("|");
 					}
 					String grade = loginedMember.grade;
-					float dc = loginedMember.dc;
+					float dc = setDc();
 					float price = forPrintGetMovieArticles.get(selectNum - 1).price;
 					float personPrice = price - price*dc;
 					System.out.printf("\n선택하신 좌석은 %s, 예매 가격은 %s 할인가 적용 %.2f 입니다.\n\n", Arrays.toString(seatStrArr),grade,personPrice*persons);

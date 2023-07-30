@@ -130,4 +130,18 @@ public class SeatDao extends Dao {
 
 		return dbConnection.insert(sb.toString());
 	}
+
+	public Seat getForPrintSeats(int selectNum) {
+		StringBuilder sb = new StringBuilder();
+
+		sb.append(String.format("SELECT * FROM defaultSeats "));
+		sb.append(String.format("WHERE id = '%d' ", selectNum));
+
+		Map<String, Object> row = dbConnection.selectRow(sb.toString());
+
+		if (row.isEmpty()) {
+			return null;
+		}
+		return new Seat(row);
+	}
 }

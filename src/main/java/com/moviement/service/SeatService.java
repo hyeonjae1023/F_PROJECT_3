@@ -41,4 +41,9 @@ public class SeatService {
 	public int doWrite() {
 		return seatDao.doWrite();
 	}
+
+	public Seat getForPrintSeat(int selectNum) {
+		// TODO Auto-generated method stub
+		return seatDao.getForPrintSeats(selectNum);
+	}
 }

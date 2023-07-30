@@ -26,16 +26,17 @@ public abstract class Controller {
 			loginedMember.grade = "bronze";
 		}
 	}
-	public void setDc() {
+	public float setDc() {
 		Member loginedMember = Container.getSession().getLoginedMember();
 		if(loginedMember.grade.equals("silver")) {
-			loginedMember.dc = 0.05f;
+			return  0.05f;
 		}
 		else if(loginedMember.grade.equals("gold")) {
-			loginedMember.dc = 0.1f;
+			return 0.1f;
 		}
 		else if (loginedMember.grade.equals("vip")) {
-			loginedMember.dc = 0.2f;
+			return  0.2f;
 		}
+		return 0;
 	}
 }

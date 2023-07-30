@@ -157,8 +157,8 @@ public class MemberController extends Controller {
 
 		String grade = "bronze";
 		
-		float dc = 0;
-		memberService.join(loginId, eMail, nickName, loginPw, name, grade, dc);
+		
+		memberService.join(loginId, eMail, nickName, loginPw, name, grade);
 
 		System.out.printf("\n%s님, MovieMent 회원이 되신걸 환영합니다 :D\n\n", name);
 	}
@@ -326,12 +326,11 @@ public class MemberController extends Controller {
 
 		System.out.printf("=== === === 나의 예매 현황 === === ===\n\n");
 		Seat seat;
-
+		Seat deleteSeat; 
 		System.out.print("번호 | 좌석 | 닉네임    | 영화 이름 | 가격");
 		for (int i = 0; i <= getForPrintSeat.size() - 1; i++) {
 			seat = getForPrintSeat.get(i);
 			selectMovieNum = seat.id;
-			price = seat.price;
 			movieTitle = seat.movieTitle;
 			System.out.printf("\n%2d  | %3s | %7s | %s | %.1f", seat.id, seat.seatNum, seat.nickName, seat.movieTitle, seat.price);
 		}
@@ -342,7 +341,7 @@ public class MemberController extends Controller {
 			System.out.println("이전으로 : 0 ");
 			System.out.print("입력 : ");
 			selectNum = sc.nextInt();
-			
+			deleteSeat =  Container.seatService.getForPrintSeat(selectNum);
 			if (selectNum == 0) {
 				return;
 			}
@@ -357,7 +356,7 @@ public class MemberController extends Controller {
 		System.out.println();
 
 		while (true) {
-			System.out.printf("%s, 환불금액 : %.1f \n",movieTitle,price);
+			System.out.printf("%s, 환불금액 : %.1f \n",deleteSeat.movieTitle,deleteSeat.price);
 			System.out.println("1. 예매 취소");
 			System.out.println("9. 이전 단계로");
 			System.out.print("입력 : ");

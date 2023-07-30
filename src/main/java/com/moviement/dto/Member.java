@@ -9,7 +9,6 @@ public class Member extends Dto {
 	public String eMail;
 	public String nickName;
 	public String grade;
-	public float dc;
 
 	public Member(Map<String, Object> row) {
 		super(row);
@@ -19,16 +18,15 @@ public class Member extends Dto {
 		this.eMail = (String) row.get("Email");
 		this.nickName = (String) row.get("nickName");
 		this.grade = (String) row.get("grade");
-		this.dc = (float) row.get("dc");
 	}
 
-	public Member(String loginId, String eMail, String nickName, String loginPw, String name, String grade, float dc) {
+	public Member(String loginId, String eMail, String nickName, String loginPw, String name, String grade) {
 		this.loginId = loginId;
 		this.loginPw = loginPw;
 		this.name = name;
 		this.eMail = eMail;
 		this.nickName = nickName;
 		this.grade = grade;
-		this.dc = dc;
+
 	}
 }
